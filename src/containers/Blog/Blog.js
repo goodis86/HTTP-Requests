@@ -16,7 +16,7 @@ class Blog extends Component {
     }
 
   componentDidMount() {
-    Axios.get("https://jsonplaceholder.typicode.com/posts")
+    Axios.get("https://jsonplaceholder.typicode.com/postssss")
     .then((response) => {
         const posts = response.data.slice(0,4);
         const updatedPosts = posts.map(post =>{
