@@ -4,7 +4,8 @@ import Post from "../../components/Post/Post";
 import FullPost from "../../components/FullPost/FullPost";
 import NewPost from "../../components/NewPost/NewPost";
 import "./Blog.css";
-import Axios from "axios";
+import axios from '../../Axios';
+//import Axios from "axios";
 //Axios is a third party javascript library for using https requests!!!!
 
 class Blog extends Component {
@@ -16,7 +17,7 @@ class Blog extends Component {
     }
 
   componentDidMount() {
-    Axios.get("https://jsonplaceholder.typicode.com/postssss")
+    axios.get("/posts")
     .then((response) => {
         const posts = response.data.slice(0,4);
         const updatedPosts = posts.map(post =>{
